@@ -1,8 +1,8 @@
 from fastapi import FastAPI, Depends, BackgroundTasks, Body
-from backend.database import Base, engine, SessionLocal
-from backend.models import Link
+from backend.models import User, Link
 from backend.schemas import UserRead, UserCreate
-from backend.user_manager import fastapi_users, auth_backend, current_active_user
+from backend.database import SessionLocal, engine
+from backend.user_manager import fastapi_users
 from backend.email_alert import send_email_alert
 import aiohttp
 from sqlalchemy.orm import Session
